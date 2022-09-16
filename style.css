@@ -1,0 +1,158 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+ul { 
+    list-style: none;
+}
+
+body { 
+    background-image: url(./assets/bg.jpg); /*pega a imagem no url descrito */
+    background-position: top center; /*mudando a posicao da imagem, top = topo, center = centro, centralizada e no topo sempre*/
+    background-size: 100% auto; /*tamanho 100% na sua horizontalidade, sua largura, auto = parte de cima e baixo automatica*/
+    background-repeat: no-repeat; /* no-repeat, faz com com que a imagem nao se repita */
+    background-color: #121214;  /* altera a cor de fundo pro restante da página já que não ira mais se repetir como mostrado acima*/ 
+}
+
+body * { 
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+header { 
+    margin-top: 32px; 
+    height: 120px;
+}
+
+header div { 
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s;
+}
+
+header div:hover { /*Animacao na fotinha*/ 
+    transform: scale(1.1);
+}
+
+header div img { 
+    width: 100%;   
+    border-radius: 50%;
+
+}
+
+main { 
+    max-width: 580px; /* largura maxima de 580 pixel para tudo que está nele*/
+    width: 90%; /*direcionando a largura pra ser 90% de 580px*/
+    margin: 32px auto; 
+
+    display: grid;
+    gap: 24px;  
+
+    margin-top: 32px;
+}
+
+section { 
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div { 
+    background-color: #2A2634;
+    padding: 32px; /*preenchimento interno*/ 
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section h2 { 
+    letter-spacing: -0.47px;
+}
+
+section p { 
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+    font-size: 16px;
+}
+
+section ul { 
+    display: flex; 
+    flex-wrap: wrap; /*Ao adicionar mais elementos, no caso mais li's', ele inves de colocar para o lado ira colocar abaixo, dependendo do limite da caixa*/
+    gap: 16px;
+    margin-top: 24px; /*Espaço do topo*/ 
+}
+
+section ul li { 
+    transition: transform .3s; 
+}
+
+section ul li:hover { 
+    transform: scale(1.1); 
+}
+
+.games-list img { 
+    width: 90px;
+    border-radius: 8px; 
+}
+
+.channel-list img { 
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443e54;
+}
+
+/*Animation*/ 
+
+header div { 
+    animation: fromTop .7s .0s backwards;
+}
+
+main section { 
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1) { 
+    animation-delay: .1s;
+}
+
+main section:nth-child(2) { 
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) { 
+    animation-delay: .6s;
+}
+
+@keyframes fromTop { 
+    from {
+        opacity: 0;
+        transform: translateY(-30px)
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fromBottom { 
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
